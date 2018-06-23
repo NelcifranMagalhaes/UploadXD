@@ -69,6 +69,6 @@ class ManagersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def manager_params
-      params.fetch(:manager, {})
+      params.fetch(:manager).permit(:file_txt)
     end
 end
