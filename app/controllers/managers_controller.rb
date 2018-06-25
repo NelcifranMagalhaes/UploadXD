@@ -26,6 +26,15 @@ class ManagersController < ApplicationController
   def create
     @manager = Manager.new(manager_params)
 
+    if @manager.valid?
+      puts 'Katsuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu '
+      deidara = File.read params[:manager][:file_txt].path
+      deidara.gsub!(/\r\n?/, "\n")
+      deidara.each_line do |line|
+        print "#{line}"
+      end
+    end
+
     respond_to do |format|
       if @manager.save
         format.html { redirect_to @manager, notice: 'Manager was successfully created.' }
