@@ -31,7 +31,7 @@ class ManagersController < ApplicationController
       deidara = File.read params[:manager][:file_txt].path
       deidara.gsub!(/\r\n?/, "\n")
       deidara.each_line do |line|
-        print "#{line}"
+        print "#{line.split(/\t+/)}"
       end
     end
 
