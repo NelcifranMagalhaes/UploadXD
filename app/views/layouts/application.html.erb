@@ -5,10 +5,39 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+  <%= favicon_link_tag 'txt-icon', :rel => 'shortcut icon' %>
 </head>
 <body>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			    <%= link_to root_path,class: "navbar-brand" do %>
+			        UploadXD
+			    <% end %>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
 
-<%= yield %>
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item active">
+		        <%= link_to relatories_path,class: "nav-link" do %>
+		        <span>Relatorios</span>
+			    <% end %>
+		      </li>
+		    </ul>
+
+		  </div>
+		</nav>
+
+		<br></br>
+	    <div class="container-fluid">
+
+	  		<%= yield %>
+	  		
+	  	</div>
+	</div>
 
 </body>
 </html>

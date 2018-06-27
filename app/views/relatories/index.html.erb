@@ -1,23 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Relatories</h1>
-
-<table>
-  <thead>
+<h3>Listando dados upados pelos txt(s)</h3>
+<br>
+<table class="table">
+  <thead class="thead-dark">
     <tr>
-      <th>Buyer</th>
-      <th></th>
-      <th>Description</th>
-      <th></th>
-      <th>Price</th>
-      <th></th>
-      <th>Quantity</th>
-      <th></th>
-      <th>Address</th>
-      <th>String</th>
-      <th>Owner</th>
-      <th></th>
-      <th colspan="3"></th>
+      <th scope="col">Buyer</th>
+      <th scope="col">Description</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Address</th>
+      <th scope="col">Owner</th>
+      <th scope="col">Total da linha</th>
+      <th scope="col">#</th>
+
     </tr>
   </thead>
 
@@ -30,14 +26,12 @@
         <td><%= relatory.quantity %></td>
         <td><%= relatory.address %></td>
         <td><%= relatory.owner %></td>
-        <td><%= link_to 'Show', relatory %></td>
-        <td><%= link_to 'Edit', edit_relatory_path(relatory) %></td>
-        <td><%= link_to 'Destroy', relatory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= relatory.price*relatory.quantity %></td>
+        <td><%= link_to 'Mostrar', relatory ,class: "btn btn-primary btn-sm" %></td>
+
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Relatory', new_relatory_path %>
