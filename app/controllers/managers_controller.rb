@@ -27,22 +27,8 @@ class ManagersController < ApplicationController
     @manager = Manager.new(manager_params)
 
     if @manager.valid?
-      puts 'Katsuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu '
-      deidara = File.read params[:manager][:file_txt].path
-      deidara.gsub!(/\r\n?/, "\n")
-      lista_cheia = []
-      deidara.each_line do |line|
-        #lista = line.split(/\t+/)
-        lista_cheia.push(line.split(/\t+/))
-      end
 
-      if lista_cheia.size >= 2
-        lista_cheia.delete_at(0)
-        lista_cheia.each do |ls|
-          puts ls.split(/\n+/)
-          puts "########################"
-        end
-      end
+     Manager.importa_arquivo_bd(File.read params[:manager][:file_txt].path)
 
     end
 

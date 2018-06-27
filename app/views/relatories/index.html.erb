@@ -25,17 +25,11 @@
     <% @relatories.each do |relatory| %>
       <tr>
         <td><%= relatory.buyer %></td>
-        <td><%= relatory. %></td>
         <td><%= relatory.description %></td>
-        <td><%= relatory. %></td>
         <td><%= relatory.price %></td>
-        <td><%= relatory. %></td>
         <td><%= relatory.quantity %></td>
-        <td><%= relatory. %></td>
         <td><%= relatory.address %></td>
-        <td><%= relatory.string %></td>
         <td><%= relatory.owner %></td>
-        <td><%= relatory. %></td>
         <td><%= link_to 'Show', relatory %></td>
         <td><%= link_to 'Edit', edit_relatory_path(relatory) %></td>
         <td><%= link_to 'Destroy', relatory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
