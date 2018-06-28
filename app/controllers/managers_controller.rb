@@ -28,8 +28,10 @@ class ManagersController < ApplicationController
 
     respond_to do |format|
       if @manager.save
+        #Aqui a magic acontece....#############
         @manager.importa_arquivo_bd(File.read params[:manager][:file_txt].path)
-        format.html { redirect_to @manager, notice: 'Manager was successfully created.' }
+
+        format.html { redirect_to @manager, notice: 'Arquivo Salvo' }
         format.json { render :show, status: :created, location: @manager }
       else
         format.html { render :new }
@@ -43,7 +45,7 @@ class ManagersController < ApplicationController
   def update
     respond_to do |format|
       if @manager.update(manager_params)
-        format.html { redirect_to @manager, notice: 'Manager was successfully updated.' }
+        format.html { redirect_to @manager, notice: 'Arquivo atualizado.' }
         format.json { render :show, status: :ok, location: @manager }
       else
         format.html { render :edit }
@@ -57,7 +59,7 @@ class ManagersController < ApplicationController
   def destroy
     @manager.destroy
     respond_to do |format|
-      format.html { redirect_to managers_url, notice: 'Manager was successfully destroyed.' }
+      format.html { redirect_to managers_url, notice: 'Arquivo destroído.' }
       format.json { head :no_content }
     end
   end

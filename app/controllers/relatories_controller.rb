@@ -28,7 +28,7 @@ class RelatoriesController < ApplicationController
 
     respond_to do |format|
       if @relatory.save
-        format.html { redirect_to @relatory, notice: 'Relatory was successfully created.' }
+        format.html { redirect_to @relatory, notice: 'Relatório Salvo.' }
         format.json { render :show, status: :created, location: @relatory }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class RelatoriesController < ApplicationController
   def update
     respond_to do |format|
       if @relatory.update(relatory_params)
-        format.html { redirect_to @relatory, notice: 'Relatory was successfully updated.' }
+        format.html { redirect_to @relatory, notice: 'Relatório atualizado.' }
         format.json { render :show, status: :ok, location: @relatory }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class RelatoriesController < ApplicationController
   def destroy
     @relatory.destroy
     respond_to do |format|
-      format.html { redirect_to relatories_url, notice: 'Relatory was successfully destroyed.' }
+      format.html { redirect_to relatories_url, notice: 'Relatório deletado.' }
       format.json { head :no_content }
     end
   end
