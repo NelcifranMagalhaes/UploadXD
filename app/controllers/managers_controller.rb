@@ -26,14 +26,9 @@ class ManagersController < ApplicationController
   def create
     @manager = Manager.new(manager_params)
 
-    if @manager.valid?
-
-     Manager.importa_arquivo_bd(File.read params[:manager][:file_txt].path)
-
-    end
-
     respond_to do |format|
       if @manager.save
+        @manager.importa_arquivo_bd(File.read params[:manager][:file_txt].path)
         format.html { redirect_to @manager, notice: 'Manager was successfully created.' }
         format.json { render :show, status: :created, location: @manager }
       else

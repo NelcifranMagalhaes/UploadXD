@@ -207,7 +207,7 @@ DEPENDENCIES
   faker
   jbuilder (~> 2.0)
   jquery-rails
-  pg (~> 0.15)
+  pg (~> 0.20)
   rails (= 4.2.6)
   rails-i18n
   rspec-rails (~> 3.7)

@@ -1,4 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_manager_path(@manager) %> |
-<%= link_to 'Back', managers_path %>
+<div class="text-center">
+	<%= link_to("Arquivo",@manager.file_txt.url) %>
+	<br>
+	<%= link_to 'Editar',edit_manager_path(@manager),class: "btn btn-info btn-sm"  %> |
+	<%= link_to 'Voltar' ,managers_path ,class: "btn btn-primary btn-sm" %>
+</div>
+

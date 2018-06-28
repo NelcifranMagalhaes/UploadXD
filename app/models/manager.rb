@@ -1,8 +1,9 @@
 class Manager < ActiveRecord::Base
 	mount_uploader :file_txt, FileTxtUploader
+	has_many :relatories,dependent: :destroy
 
 
-	def self.importa_arquivo_bd(arquivo)
+	def importa_arquivo_bd(arquivo)
 		arquivo.gsub!(/\r\n?/, "\n")
 		lista_cheia = [] #lista que contem o arquivo sem os tabs
 
@@ -23,7 +24,7 @@ class Manager < ActiveRecord::Base
 		end
 		lista_pra_inserir.each do |novo|
 			
-			Relatory.create(buyer: novo[0],description: novo[1],price: novo[2],quantity: novo[3],address: novo[4],owner: novo[5])
+			Relatory.create(buyer: novo[0],description: novo[1],price: novo[2],quantity: novo[3],address: novo[4],owner: novo[5],manager_id: self.id)
 		end 
 		
 	end
